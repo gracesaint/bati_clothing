@@ -1,0 +1,83 @@
+<% provide(:title, "Contact")%>
+<div class="navigation">
+    <ul>
+  <!--   <li>< link_to "NEW IN", controller: "products", action: "index" %></li>
+     <div class="dropdown">
+       <button class="dropbtn"><li>< link_to "WOMEN", controller: "products", action: "index" %></li></button>
+        <div class="dropdown-content">
+          <a href="#">NEW IN</a>
+          <a href="#">TOPS</a>
+          <a href="#">BOTTOMS</a>
+          <a href="#">DRESSES</a>
+          <a href="#">ROMPERS</a>
+        </div>
+      </div>
+        <li>< link_to "MEN", controller: "main", action: "home" %></li>
+        <li>< link_to "SALE", controller: "main", action: "home" %></li>
+  -->
+  
+  
+    </ul>
+</div>
+
+
+
+
+<div class="content">
+    
+    <div class="contact">
+    <h3><strong>Email</strong></h3>
+    <a href="mailto:contactus@imoclothing.com">contactus@imoclothing.com</a>
+     </div>
+   
+   <div class="contact">
+    <h3><strong>Address</strong></h3>
+    <p>313 S. Locust St., Greencastle, IN 46135</p>
+    </div>
+    
+    <div class="contact">
+    <h3><strong>Phone</strong></h3>
+    <p>+1 (317) 453-1277</p>
+    </div>
+    
+</div>     
+  
+
+    <div class="note2">
+    <p>You can contact our online team below to submit your inquiry through an online form,
+    otherwise please email us at contactus@imoclothing.com</p>
+    </div>   
+    &nbsp;
+  
+
+    <div class="InquiryForm">
+    <h2 style="text-align: center;"><strong>Contact Us:</strong></h2>
+    <form onSubmit="alert('Thank you for your inquiry.');" >
+        <div class="form-group">
+        <%= form_for :person do |f| %>
+        <input type="name" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+        
+         <div class="form-group">
+		 <input type="name" class="form-control" id="email" placeholder="Enter Email">
+		 </div>
+		 
+		 <div class="form-group">
+		 <input type="name" class="form-control" id="phone" placeholder="Enter Phone">
+		 </div>
+
+         <div class="form-group">
+		 <textarea class="form-control" id="inquiry" placeholder="Enter Inquiry" rows="3"></textarea>
+		 </div>
+
+		<%= f.submit   "Submit", class: "btn btn-primary" %>
+	   <% end %>
+    </form>
+  </div>
+  
+  &nbsp;
+  
+  
+  
+
+

@@ -1,0 +1,570 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// remember the !important rule in the future
+
+.center img{
+    margin-right: 70px;
+}
+
+.center{
+    text-align: center;
+}
+
+.dropbtn {
+    background-color: white !important;
+   // color: white;
+  //  padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+  //  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+   // background-color: #3e8e41;
+}
+
+
+footer{
+    border-top: 1px solid grey;
+    padding-top: 3px; 
+    list-style: none;
+    margin-bottom: 0px !important;
+    width: 100%;
+}
+
+footer small {
+    float: left; 
+}
+
+footer ul { 
+    float: right;
+    list-style: none; 
+}
+
+footer ul li {
+    float: left; 
+    margin-left: 13px;
+    
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow-contain {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 26%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text 
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}*/
+
+.row:after {
+  content: "";
+ // display: table;
+//  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+//  float: left;
+ // width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+//END OF NEW PICTURE FRAMES
+
+
+//Checkout page implementation
+
+table .checkout{
+    margin-left: 100px;
+    float: left;
+}
+
+
+#products {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#products tr:nth-child(even){background-color: #f2f2f2;}
+
+#products tr:hover {background-color: #ddd;}
+
+#products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ffdab9;
+    color: black;
+}
+
+#products form{
+    color: white;
+    text-decoration: none;
+    border-collapse: collapse;
+    
+}
+
+#products form:hover{
+    background-color: white;
+}
+
+
+
+
+/* Search bar */
+
+.searchBar{
+    //width: 30%;
+    //margin-left: 20px;
+    float: left;
+}
+
+.searchBar .btn{
+    //width: 20%;
+    float: left;
+}
+
+
+.mainImg img{
+    margin-left: 180px;
+    float: left;
+}
+
+.productInfo{
+    float: right;
+}
+
+/* Search Results Page */
+
+.itemsFound{
+    margin-left: 200px;
+}
+
+thead{
+    padding: 4px;
+}
+
+
+/*    forms    */
+ input, textarea, select,  .uneditable-input {
+	border: 1px solid blue;
+	width: 70%;
+	margin-bottom: 15px;
+}
+
+input {
+	height: auto;
+}
+
+
+.navigation ul{
+    list-style: none;
+    padding: 16px;
+    width: 20%;
+    position: absolute;
+}
+
+.navigation ul li{
+    padding: 25px;
+    
+}
+
+.navigation ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.navigation li a:hover{
+    background-color: #F1F1F1;
+    
+}
+
+header p{
+    text-align: center;  
+    padding: 6px;
+}
+
+header{
+    background-color: #ffdab9;
+    margin-top: 0px;
+}
+
+body{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: black;
+    padding: 0px;
+    margin: 0px !important;
+    height: 100%;
+}
+
+
+footer {
+    clear: both;
+}
+
+footer .left {
+    float: left;
+    margin-right: 630px;
+}
+
+footer .right {
+    float: right;
+    padding-right: 5px;
+}
+
+footer .right li{
+    padding-right: 5px;
+}
+
+
+/*link color and size */
+a{
+    color: black;
+    font-size: 16px;
+}
+
+
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+
+
+// The dots/bullets/indicators 
+.dot {
+  cursor:pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.contact{
+    float: left;
+    margin-left: 150px;
+}
+
+.content h3{
+    text-align: center;
+}
+
+
+.content p{
+    text-align: center;
+}
+
+.note2 p{
+    text-align: center;
+    margin-left: 253px;
+    width: 60%;
+    position: relative;
+    top: 20px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.InquiryForm {
+    width: 30%;
+    text-align: center;
+    margin-left: 440px;
+}
+
+.LoginForm{
+    float: left;
+    width: 50%;
+}
+
+
+
+.InquiryForm h2{
+    margin-left: 17px;
+}
+
+/*
+form{
+    width: 30%;
+    text-align: center;
+    margin-left: 440px;
+}
+
+*/
+
+form input{
+    //text-align: center;
+}
+
+.product-box a:hover{
+    text-decoration: none !important;
+    background-color: #ffdab9;
+}
+
+.span9 .span3{
+    float: left;
+    margin: 15px;
+    margin-left: 120px;
+}
+
+.span3 li{
+    list-style-type: none;
+}
+
+.listing-products li{
+    list-style-type: none;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 350px;
+    width: 450px;
+    margin-top: 45px;
+}
+
+thead tr{
+    height:70px; 
+    width:300px; 
+    color:black; 
+    font-size: 25px; 
+}
+
+th{
+    height: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+tbody td{
+    padding: 18px;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+.container1 ul{
+    margin-right: 40px;
+}
+
+.container1 ul{
+    //width: 70%;
+}
+
+.container1 .searchBar{
+    margin-top: 10px;
+}
+
+.container{
+    clear: both;
+}
+
+.container ul{
+    clear: left;
+}
+
+
+/* Home images */
+
+.link-container img{
+    clear: both;
+    //margin: 0 auto;
+    float: left !important;
+}
+
+.link-container  {
+    float: left;
+    padding: 10px;
+    margin-left: 150px;
+}
+
+
+.centered {
+    position: absolute;
+    top: 144%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+}
+
+.centered a{
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+    color: white !important;
+}
+
+.centered a:hover{
+    background-color: clear !important;
+}
+
+
+
+.centered1 {
+    position: absolute;
+    top: 148%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.centered1 a{
+    color: white !important;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.centered2 {
+    position: absolute;
+    top: 200%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+}
+
+.centered2 a{
+    color: white !important;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.centered3 {
+    position: absolute;
+    top: 200%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.centered3 a{
+    color: white !important;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+}

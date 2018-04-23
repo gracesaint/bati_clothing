@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bati Clothing: <%= controller.action_name %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <header>
+        <div class="headliner">
+        <p><strong>
+              Use Promo Code: 15OFF for 15% off your next purchase.
+          </strong>
+        </p>
+        </div>
+      </header>
+    
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-success">
+        <%= message %>
+        </div>
+      <% end %>
+      <% flash.clear %>
+  </div>
+
+    <div class="container1 collapse navbar-collapse">
+      
+      <nav>
+        
+        <ul class="nav navbar-nav">
+          <!-- li>
+       < render :template => "search/index" %>
+        </li -->
+  <!--         <li>< link_to image_tag "SeachBar.jpg", controller: '#', action: '#', :size => '20x20' %></li>
+       <div class="searchBar">
+          < form_tag(controller: "static_pages", action: "display", :method => "post", id: "search-form") do %>
+          < text_field_tag :search, params[:search], placeholder: "Search Clothing by color, type or size", class: "text_f form-control" %>
+          <!-- < submit_tag "Search", class: "btn btn-primary" %> 
+         < end >
+      </div>
+      
+      -->
+          <li><%= link_to root_path do %>
+         <%= image_tag "ImoClothing.jpg", class: "container1" %>
+        <% end %></li>
+        
+          
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            
+        <% else %> 
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+        <% end %>
+            
+          </ul>
+      </nav>
+    </div>
+    
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+      
+<br>
+<br>
+<br>
+<br>
+
+
+
+      <footer class="footer">
+        <nav>
+          <ul>
+            <div class="left">
+              
+           <li><%= link_to "About", main_display_path %></li>
+            <li><%= link_to "Contact", main_contact_path %></li>
+         </div>
+            <div class="right">
+            <li><%= link_to "Facebook", "http://www.facebook.com" %></li>
+            <li><%= link_to "Twitter", "http://www.twitter.com" %></li>
+            <li><%= link_to "Instagram", "http://www.instagram.com" %></li>
+            <li>&copy 2018 by Grace Saint</li>
+            </div>
+          </ul>
+        </nav>
+      </footer>
+  </body>
+</html>
