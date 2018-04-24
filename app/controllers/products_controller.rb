@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+ # before_filter :check_user, only: [:edit, :update, :destroy]
+ #working on video for Set User Permissions
 
   # GET /products
   # GET /products.json
@@ -11,6 +13,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @products = Product.all
   end
 
   # GET /products/new
@@ -73,4 +76,7 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :price, :color, :size, :description, :image_url)
     end
+    
+   
+    
 end
