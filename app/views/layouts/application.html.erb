@@ -50,6 +50,8 @@
           
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Contact", main_contact_path %> </li>
+            <li><%= link_to "Products", products_path %></li>
         <% if user_signed_in? %>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
