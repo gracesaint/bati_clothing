@@ -1,24 +1,36 @@
 <% provide(:title, "Contact")%>
 <div class="navigation">
     <ul>
-  <!--   <li>< link_to "NEW IN", controller: "products", action: "index" %></li>
-     <div class="dropdown">
-       <button class="dropbtn"><li>< link_to "WOMEN", controller: "products", action: "index" %></li></button>
+      <div class="dropdown">
+     <button class="dropbtn"><li><%= link_to "NEW IN", controller: "products", action: "index" %></li></button>
+       <div class="dropdown-content">
+         <a href="https://bait-clothing-gracesaint2018.c9users.io/products">WOMEN</a>
+         <a href="#">MEN</a>
+       </div>
+      </div>
+     
+       <div class="dropdown">
+       <button class="dropbtn"><li><%= link_to "WOMEN", controller: "products", action: "index" %></li></button>
         <div class="dropdown-content">
-          <a href="#">NEW IN</a>
-          <a href="#">TOPS</a>
+          <a href="https://bait-clothing-gracesaint2018.c9users.io/products">NEW IN</a>
+          <a href="https://bait-clothing-gracesaint2018.c9users.io/products">TOPS</a>
           <a href="#">BOTTOMS</a>
           <a href="#">DRESSES</a>
           <a href="#">ROMPERS</a>
         </div>
       </div>
-        <li>< link_to "MEN", controller: "main", action: "home" %></li>
-        <li>< link_to "SALE", controller: "main", action: "home" %></li>
-  -->
-  
-  
+      <div class="dropdown">
+        <button class="dropbtn"><li><%= link_to "MEN", controller: "main", action: "home" %></li></button>
+        <div class="dropdown-content">
+          <a href="https://bait-clothing-gracesaint2018.c9users.io/products">NEW IN</a>
+          <a href="https://bait-clothing-gracesaint2018.c9users.io/products">TOPS</a>
+          <a href="https://bait-clothing-gracesaint2018.c9users.io/products">JACKETS</a>
+        </div>
+      </div>
+        <button class="dropbtn"><li><%= link_to "SALE", controller: "main", action: "home" %></li></button>
     </ul>
 </div>
+
 
 
 
@@ -27,7 +39,7 @@
     
     <div class="contact">
     <h3><strong>Email</strong></h3>
-    <a href="mailto:contactus@imoclothing.com">contactus@imoclothing.com</a>
+    <a href="mailto:gracesaint18@gmail.com">gracesaint18@gmail.com</a>
      </div>
    
    <div class="contact">
