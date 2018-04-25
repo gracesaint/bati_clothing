@@ -1,14 +1,75 @@
-<p id="notice"><%= notice %></p>
+<h1>Your Order</h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user_id %>
-</p>
+<table>
+  <tr>
+  <th><strong>Customer:</strong></th>
+  <td><%= @order.user_id %></td>
+</tr>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
+<tr>
+  <th>Status:</th>
+  <td><%= @order.status %></td>
+</tr>
+
+<tr>
+  <th>Items:</th>
+  <td>Item Count: <%= @order.order_items.count %></td>
+</tr>
+
+</table>
+
+<table id= "products" style="margin-left: 30px; border-collapse: collapse;" border="0"; cellspacing="0";>
+<thead>
+<tr>
+    <th>Image</th>
+    <th>Product Name</th>
+    <th>Color</th>
+    <th>Size</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Remove</th>
+</thead>  
+
+  <tbody style="border-left: 0px none; border-right: 0px none;">
+  
+  
+  <% @order.order_items.each do |item| %>
+</tr>
+      <td><%= image_tag "products/#{item.product.image_url}" %></td>
+      <td> <%= item.product.title %></td>
+      <td> <%= item.product.color %></td>
+      <td> <%= item.product.size %></td>
+      <td> <%= link_to item.quantity %></td>
+      <td> <%= item.product.price %></td>
+      <td><%= link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  <% end %>
+</tbody>
+</table>
+
+
+<hr>
+
+<h4>SUBTOTAL</h4>
+<p>EXCLUDING TAX & SHIPPING: </p>
+
+  <% @order.order_items.each do | item | %>
+  <%= print_price item.subtotal %> + 
+  <% end %>
+  
+  <br>
+  
+  
+
+
+  <h4>Order Total:</h4>
+ <%= print_price @order.total %>
+ 
+<hr>
+
+
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', orders_path %> | 
+<%= link_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %>
+

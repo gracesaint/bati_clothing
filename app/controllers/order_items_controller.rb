@@ -1,5 +1,7 @@
 class OrderItemsController < ApplicationController
   before_action :set_order_item, only: [:show, :edit, :update, :destroy]
+  before_action :load_order, only: [:create]
+
 
   # GET /order_items
   # GET /order_items.json
@@ -24,11 +26,13 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = OrderItem.new(order_item_params)
-
+   #@order_item = @order.order_items.new(quantity: 1, product_id: params[:product_id]) #this works, but quantities dont add
+    @order_item = @order.order_items.find_or_initialize_by(product_id: params[:product_id])
+    
     respond_to do |format|
+      @order_item.quantity += 1
       if @order_item.save
-        format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
+        format.html { redirect_to @order, notice: 'Order item was successfully created.' }
         format.json { render :show, status: :created, location: @order_item }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class OrderItemsController < ApplicationController
   def update
     respond_to do |format|
       if @order_item.update(order_item_params)
-        format.html { redirect_to @order_item, notice: 'Order item was successfully updated.' }
+        format.html { redirect_to order_path (session[:order_id]), notice: 'Order item was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_item }
       else
         format.html { render :edit }
@@ -56,12 +60,35 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url, notice: 'Order item was successfully destroyed.' }
+      format.html { redirect_to order_path (session[:order_id]), notice: 'Order item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+  
+  #from merchant tutorial
+#  def load_order
+#  begin
+#    @order = Order.find(session[:order_id])
+#  rescue ActiveRecord::RecordNotFound
+#    @order = Order.create(status: "unsubmitted")
+#    session[:order_id] = @order.id
+#  end
+#  end
+  
+  #second merchant tutorial method
+  def load_order
+  @order = Order.find_or_initialize_by(id: session[:order_id], status: "unsubmitted")
+  if @order.new_record?
+    @order.save!
+    session[:order_id] = @order.id
+  end
+  end
+  
+  
+  
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_order_item
       @order_item = OrderItem.find(params[:id])
