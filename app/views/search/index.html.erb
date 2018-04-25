@@ -1,0 +1,11 @@
+<%= form_tag "/search", :class => "navbar-form navbar-text",
+     :style => "margin: 10px", :method => :get do |form| %>
+      <div class="input-group">
+       <%= text_field_tag :q, params[:q], class: "form-control" %>
+       <div class="input-group-btn">
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+         <i class="glyphicon glyphicon-search"></i>
+        <% end %>
+       </div>
+      </div>
+<% end %>

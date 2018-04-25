@@ -1,0 +1,24 @@
+<% if !@res || @res.total == 0 %>
+     <span>No results.</span>
+     <% else %>
+     <span>Found <%= "#{@res.total}" %> results.</span>
+     <table>
+<thead> <tr>
+           <th>Name</th>
+           <th>Description</th>
+           <th>Price</th>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @res.results.each do |product| %>
+           <tr>
+             <td><%= product.name %></td>
+             <td><%= product.description %></td>
+             <td><%= product.price %></td>
+             <td><%= link_to 'Show', product %></td>
+           </tr>
+         <% end %>
+       </tbody>
+     </table>
+<% end %>

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :order_items
+  get 'search/index'
+
+  get 'search/results'
+  resources :search
+
   resources :products
   devise_for :users
   get 'main/home'

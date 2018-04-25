@@ -1,5 +1,9 @@
 <div class="row">
 <div class="col-md-8">
+  
+  <h2>
+  <strong><%= @product.title %></strong>
+</h2>
 
 <p id="notice"><%= notice %></p>
 
@@ -55,4 +59,4 @@
 <% end %>
 
 
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path, class: "btn btn-link" %>
