@@ -10,23 +10,27 @@
       </ul>
     </div>
   <% end %>
+  
+  <hr>
 
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.number_field :product_id, id: :order_item_product_id %>
-  </div>
+  <!-- div class="field">
+    < form.label :product_id %>
+    <  form.number_field :product_id, id: :order_item_product_id %>
+  </div -->
+  
+  <h2><%= order_item.product.title %></h2>
 
-  <div class="field">
-    <%= form.label :order_id %>
-    <%= form.number_field :order_id, id: :order_item_order_id %>
-  </div>
+  <!-- div class="field">
+    < form.label :order_id %>
+    < form.number_field :order_id, id: :order_item_order_id %>
+  </div -->
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :order_item_quantity %>
+    <%= form.number_field :quantity, id: :order_item_quantity, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
