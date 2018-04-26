@@ -3,6 +3,24 @@
 
 // remember the !important rule in the future
 
+
+#productName a{
+    font-size: 30px;
+}
+
+#productName h1 a{
+    color: black;
+    background-color: none;
+}
+
+#productName h1 a:hover{
+    background: none;
+    color: inherit
+}
+
+
+
+
 .center img{
     margin-right: 70px;
 }

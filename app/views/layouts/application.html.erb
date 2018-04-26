@@ -52,7 +52,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= render :template => "search/index" %></li>
             <li><%= link_to "Contact", main_contact_path %> </li>
-            <li><%= link_to "Clothes", products_path %></li>
+            <li><%= link_to "Products", products_path %></li>
         <% if user_signed_in? %>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li><%= link_to "Cart", orders_path(session[:order_id]) %></li>
