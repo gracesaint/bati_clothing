@@ -31,29 +31,16 @@
       <nav>
         
         <ul class="nav navbar-nav">
-          <!-- li>
-       < render :template => "search/index" %>
-        </li -->
-  <!--         <li>< link_to image_tag "SeachBar.jpg", controller: '#', action: '#', :size => '20x20' %></li>
-       <div class="searchBar">
-          < form_tag(controller: "static_pages", action: "display", :method => "post", id: "search-form") do %>
-          < text_field_tag :search, params[:search], placeholder: "Search Clothing by color, type or size", class: "text_f form-control" %>
-          <!-- < submit_tag "Search", class: "btn btn-primary" %> 
-         < end >
-      </div>
-      
-      -->
           <li><%= link_to root_path do %>
          <%= image_tag "ImoClothing.jpg", class: "container1" %>
         <% end %></li>
-        
-          
           </ul>
+          
           <ul class="nav navbar-nav navbar-right">
             <li><%= render :template => "search/index" %></li>
             <li><%= link_to "Contact", main_contact_path %> </li>
-            <li><%= link_to "Products", products_path %></li>
         <% if user_signed_in? %>
+              <li><%= link_to "Products", products_path %></li>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li><%= link_to "Cart", orders_path(session[:order_id]) %></li>
              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
