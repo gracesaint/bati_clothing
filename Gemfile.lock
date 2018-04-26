@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 21b0514d1e1eb3ef19ed0432e1b01aeaa99ac4d8
+  specs:
+    stripe (3.13.0)
+      faraday (~> 0.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -177,8 +184,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
-    stripe (3.13.0)
-      faraday (~> 0.10)
     sunspot (2.3.0)
       pr_geohash (~> 1.0)
       rsolr (>= 1.1.1, < 3)
@@ -228,7 +233,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  stripe
+  stripe!
   sunspot_rails
   sunspot_solr
   turbolinks (~> 5)

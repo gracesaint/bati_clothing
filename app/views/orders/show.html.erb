@@ -16,21 +16,6 @@
   <td>Item Count: <%= @order.order_items.count %></td>
 </tr>
 
-<tr>
-  <th>Street:</th>
-  <td> <%= @order.street %></td>
-</tr>
-
-<tr>
-  <th>City:</th>
-  <td> <%= @order.city %></td>
-</tr>
-
-<tr>
-  <th>State:</th>
-  <td> <%= @order.state %></td>
-</tr>
-
 
 
 </table>
@@ -88,5 +73,8 @@
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %> | 
-<%= link_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %>
+<%= link_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %><br>
+<br>
 
+
+<%= link_to "Complete Your Order", new_order_path(@product), class: "btn btn-primary" %>
