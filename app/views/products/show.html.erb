@@ -54,9 +54,9 @@
 
 <hr>
 
-<% if current_user.admin? %>
+<!--  if current_user.admin? % -->
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<% end %>
+<!--  end % -->
 
 
-<%= link_to 'Back', products_path, class: "btn btn-link" %>
+<%= link_to 'Back', products_path %>

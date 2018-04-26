@@ -2,21 +2,24 @@
      <span>No results.</span>
      <% else %>
      <span>Found <%= "#{@res.total}" %> results.</span>
-     <table>
-<thead> <tr>
+     <table id= "products" style="margin-left: 30px; border-collapse: collapse;" border="0"; cellspacing="0";>
+<thead> 
+<tr>
            <th>Name</th>
            <th>Description</th>
            <th>Price</th>
-           <th></th>
+           <th>Image</th>
+           <th>Purchase?</th>
          </tr>
        </thead>
-       <tbody>
+       <tbody style="border-left: 0px none; border-right: 0px none;">
          <% @res.results.each do |product| %>
            <tr>
-             <td><%= product.name %></td>
+             <td><%= link_to product.title, product %></td>
              <td><%= product.description %></td>
              <td><%= product.price %></td>
-             <td><%= link_to 'Show', product %></td>
+             <td><%= image_tag "products/#{product.image_url}" %></td>
+             <td><%= button_to "Add to Cart", order_items_path(product_id: product.id) %></td>
            </tr>
          <% end %>
        </tbody>

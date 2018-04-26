@@ -140,13 +140,7 @@ footer ul li {
   top: 0;
 }
 
-/* Container for image text 
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}*/
+
 
 .row:after {
   content: "";
@@ -154,11 +148,7 @@ footer ul li {
 //  clear: both;
 }
 
-/* Six columns side by side */
-.column {
-//  float: left;
- // width: 16.66%;
-}
+
 
 /* Add a transparency effect for thumnbail images */
 .demo {
@@ -170,10 +160,6 @@ footer ul li {
   opacity: 1;
 }
 
-//END OF NEW PICTURE FRAMES
-
-
-//Checkout page implementation
 
 table .checkout{
     margin-left: 100px;
@@ -419,18 +405,6 @@ a{
     margin-left: 17px;
 }
 
-/*
-form{
-    width: 30%;
-    text-align: center;
-    margin-left: 440px;
-}
-
-*/
-
-form input{
-    //text-align: center;
-}
 
 .product-box a:hover{
     text-decoration: none !important;
@@ -483,9 +457,6 @@ table, th, td{
     margin-right: 40px;
 }
 
-.container1 ul{
-    //width: 70%;
-}
 
 .container1 .searchBar{
     margin-top: 10px;

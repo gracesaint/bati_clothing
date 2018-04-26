@@ -2,12 +2,26 @@
 
 
 <div class="jumbotron">
-  <h1>Handcrafted Items from Around the World</h1>
+  <h1>Handcrafted Items from Around the Globe</h1>
   <h2>Discover one-of-a-kind clothes</h2>
 </div>
 
 
 <h1>Women's Clothing</h1>
+
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-3">
+    <h4><%= link_to product.title, product %></h4></br>
+    <%= print_price(product.price) %></br>
+    <%= product.color %></br>
+    <%= image_tag "products/#{product.image_url}" %></br>
+    <%= link_to 'Show', product_path(product) %></br>
+    <%= button_to "Add to Cart", order_items_path(product_id: product.id) %>
+    </div>
+  <% end %>
+</div>
 
 <table id= "products" style="margin-left: 30px; border-collapse: collapse;" border="0"; cellspacing="0";>
   <thead>
