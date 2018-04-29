@@ -1,6 +1,6 @@
 <div class="row">
   
-  <div class="col-md-4">
+  <div class="col-md-6">
     <% @order.order_items.each do |item| %>
     <div class="thumbnail">
       <%= image_tag "products/#{item.product.image_url}" %>
@@ -11,7 +11,7 @@
   <% end %>
   
   
-<div class="col-md-8">
+<div class="col-md-6">
 
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
@@ -26,7 +26,15 @@
       </ul>
     </div>
   <% end %>
+  
+  
+  <div id="stripe-error" class="alert alert-danger" style="display: none">
+  <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  </div>
+  
+  
 
+<h4>Input your User Information:</h4>
   <div class="form-group">
     <%= form.label :user_id %>
     <%= form.number_field :user_id, autocomplete: true, id: :order_user_id, class: "form-control" %>
@@ -34,10 +42,11 @@
 
   <div class="form-group">
     <%= form.label :status %>
-    <%= form.text_field :status, autocomplete: true, id: :order_status, class: "form-control" %>
+    <%= form.text_field :status, autocomplete: true, id: :order_status, class: "form-control" %></br>
   </div>
   
   <!-- just added from base rails -->
+<h4>Input you Address:</h4>
   <div class="form-group">
     <%= form.label :street %>
     <%= form.text_field :street, id: :order_street, class: "form-control" %>
@@ -50,9 +59,10 @@
   
   <div class="form-group">
     <%= form.label :state %>
-    <%= form.text_field :state, id: :order_state, class: "form-control" %>
+    <%= form.text_field :state, id: :order_state, class: "form-control" %></br>
   </div>
-  
+ 
+<h4>Input your Credit Card Info:</h4> 
   <div class="form-group">
     <div class"row">
       <div class="col-md-8">

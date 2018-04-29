@@ -13,7 +13,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @products = Product.all
+    #@products = Product.all
+    @reviews = Review.where(product_id: @product.id)
   end
 
   # GET /products/new

@@ -85,9 +85,7 @@ class OrderItemsController < ApplicationController
     session[:order_id] = @order.id
   end
   end
-  
-  
-  
+
   
     # Use callbacks to share common setup or constraints between actions.
     def set_order_item

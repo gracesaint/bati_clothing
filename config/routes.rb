@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #resources :reviews
   resources :orders
   resources :order_items
   get 'search/index'
@@ -6,7 +7,10 @@ Rails.application.routes.draw do
   get 'search/results'
   resources :search
 
-  resources :products
+  resources :products do
+    resources :reviews, except: [:show, :index]
+  end
+  
   devise_for :users
   get 'main/home'
   
