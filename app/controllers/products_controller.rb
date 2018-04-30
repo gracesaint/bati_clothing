@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
    #just changed @product.user_id = current_user.id
-     @product.user=current_user
+     @product.user = current_user
     
     respond_to do |format|
       if @product.save

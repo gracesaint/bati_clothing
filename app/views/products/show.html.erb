@@ -1,15 +1,27 @@
 <div class="row">
 <div class="col-md-8">
+  <p id="notice"><%= notice %></p>
   
 <h2>
   <strong><%= @product.title.upcase %></strong>
 </h2>
 
-<p id="notice"><%= notice %></p>
 
-<p>
+
+
+  <div class="dropdown">
+    <p>
   <%= image_tag @product.image_url %>
-</p>
+    </p>
+    <div class="dropdown-content">
+      <%= image_tag @product.image_url, :size => '800x800' %>
+    </div>
+</div>
+
+<br>
+
+<%= button_to "Add to Cart", order_items_path(@product_id), class: "btn btn-primary" %>
+
 
 </div>
 
@@ -41,24 +53,14 @@
 
 <hr>
 
+
+<h3>WRITE A REVIEW: </h3>
 <%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %></br>
 <br>
 
-<h3>REVIEWS:</h3>
-
-<% if @reviews.blank? %>
-<h3>No reviews yet. Be the first to write one!</h3>
-
-<% else %> 
-<% @reviews.each do |review| %>
-  <p><strong>Rating: </strong><%= review.rating %></p>
-  <p><strong>Comment: </strong><%= review.comment %></p>
-  <hr>
-  <% end %>
-<% end %>
 
 
-
+<h3>Purchased this product? Tell us what you think!</h3>
 
 </div>
 </div>
@@ -66,9 +68,6 @@
 
 <br>
 <br>
-
-<%= button_to "Add to Cart", order_items_path(@product_id), class: "btn btn-primary", data: { no_turbolink: true } %>
-
 
 <hr>
 
@@ -84,15 +83,23 @@
 
 
 <%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %>
+<h3>REVIEWS:</h3>
+
+<% if @reviews.blank? %>
+<h3>No reviews yet. Be the first to write one!</h3>
+
+<% else %> 
 <% @reviews.each do |review| %>
-  <p><%= review.rating %></p>
-  <p><%= review.comment %></p>
+  <p><strong>Rating: </strong><%= review.rating %></p>
+  <p><strong>Comment: </strong><%= review.comment %></p>
+  <hr>
+  <% end %>
 <% end %>
 
 
-<!--  if current_user.admin? % -->
+<%  if current_user.admin? %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<!--  end % -->
+<%  end %>
 
 
 <%= link_to 'Back', products_path %>

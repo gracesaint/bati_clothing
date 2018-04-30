@@ -9,6 +9,7 @@
     <h3><%= item.product.price %></h3>
     </div>
   <% end %>
+  <%= @order.total
   
   
 <div class="col-md-10">
@@ -28,7 +29,7 @@
   <% end %>
   
   
-  <div id="stripe-error" class="alert alert-danger" style="display: none">
+  <div id="stripe-error" class="alert alert-danger" style="display:none">
   <noscript>JavaScript is not enabled and is required for this form. 
   First enable it in your web browser settings.</noscript>
   </div>

@@ -33,16 +33,9 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
 
-# just added
-#@order.product_id = @product.id
-    
-    #just added apart of baserails - just trying it out
-    #@product = Product.find(params[:product_id])
-    
     Stripe.api_key = ENV["STRIPE_API_KEY"]
     token = params[:stripeToken]
     
-
     begin
       charge = Stripe::Charge.create(
         :amount => (@order.total * 100).floor,

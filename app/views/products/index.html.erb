@@ -19,7 +19,7 @@
     <% end %>
     <%= print_price(product.price) %></br>
     <strong>Color: </strong><%= product.color %></br>
-    <%= button_to "Add to Cart", order_items_path(product_id: product.id), class: "btn btn-primary" %></br>
+    <!--  button_to "Add to Cart", order_items_path(product_id: product.id), class: "btn btn-primary" %></br -->
     <br>
     
     <% if current_user.admin? && !current_user?(user) %>
