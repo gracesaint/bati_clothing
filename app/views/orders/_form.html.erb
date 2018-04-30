@@ -11,7 +11,7 @@
   <% end %>
   
   
-<div class="col-md-6">
+<div class="col-md-10">
 
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
@@ -29,7 +29,8 @@
   
   
   <div id="stripe-error" class="alert alert-danger" style="display: none">
-  <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  <noscript>JavaScript is not enabled and is required for this form. 
+  First enable it in your web browser settings.</noscript>
   </div>
   
   
@@ -67,11 +68,11 @@
     <div class"row">
       <div class="col-md-8">
             <%= label_tag :card_number, "Credit Card Number" %>
-            <%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control"} %>
+            <%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %>
     </div>
     <div class="col-md-4">
           <%= label_tag :card_code, "CVC" %>
-          <%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control"} %>
+          <%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :index, :create, :edit, :update, :destroy]
  # before_filter :check_user, only: [:edit, :update, :destroy]
  #working on video for Set User Permissions
 
@@ -30,7 +30,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    @product.user_id = current_user.id
+   #just changed @product.user_id = current_user.id
+     @product.user=current_user
     
     respond_to do |format|
       if @product.save

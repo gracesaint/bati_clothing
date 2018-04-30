@@ -15,13 +15,12 @@ class OrdersController < ApplicationController
   end
   
   
-
   # GET /orders/new
   def new
     @order = Order.new
     
     #just added from baserails -- trying it out
-    @product = Product.find(params[:product_id])
+    #@product = Product.find(params[:product_id])
   end
 
   # GET /orders/1/edit
@@ -33,16 +32,20 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user_id = current_user.id
+
+# just added
+#@order.product_id = @product.id
     
-    #just added - not apart of baserails
-    @product = Product.find(params[:product_id])
+    #just added apart of baserails - just trying it out
+    #@product = Product.find(params[:product_id])
     
     Stripe.api_key = ENV["STRIPE_API_KEY"]
     token = params[:stripeToken]
     
+
     begin
       charge = Stripe::Charge.create(
-        :amount => (@product.price * 100).floor,
+        :amount => (@order.total * 100).floor,
         :currency => "usd",
         :card => token
         )
