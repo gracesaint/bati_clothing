@@ -62,7 +62,6 @@
   
 <h4>Order Total:</h4>
  <%= print_price @order.total %>
- 
 <hr>
 
 
@@ -72,7 +71,7 @@
 <div id="paypal-button"></div>
 
 
-<script>
+<script type="text/javascript" charset="utf-8">
     paypal.Button.render({
 
         env: 'sandbox',
@@ -96,7 +95,7 @@
                 payment: {
                     transactions: [
                         {
-                            amount: { total: '1.00', currency: 'USD' }
+                            amount: { total: <%= @order.total %>, currency: 'USD' }
                         }
                     ]
                 }
@@ -106,6 +105,7 @@
         onAuthorize: function(data, actions) {
             return actions.payment.execute().then(function(payment) {
                     window.alert('Payment Complete!');
+                    window.location = 'main/home';
             });
         }
 
