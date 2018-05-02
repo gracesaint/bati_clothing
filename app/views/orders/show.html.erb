@@ -16,8 +16,6 @@
   <td>Item Count: <%= @order.order_items.count %></td>
 </tr>
 
-
-
 </table>
 
 <table id= "products" style="margin-left: 30px; border-collapse: collapse;" border="0"; cellspacing="0";>
@@ -62,19 +60,62 @@
 <br>
   
   
-
-
 <h4>Order Total:</h4>
  <%= print_price @order.total %>
  
 <hr>
 
 
+<!--  link_to "Complete Your Order", new_order_path(@product), class: "btn btn-primary" % -->
+
+
+<div id="paypal-button"></div>
+
+
+<script>
+    paypal.Button.render({
+
+        env: 'sandbox',
+        
+        style: {
+            label: 'checkout',
+            size:  'small',    // small | medium | large | responsive
+            shape: 'pill',     // pill | rect
+            color: 'gold'      // gold | blue | silver | black
+        },
+
+        client: {
+            sandbox:    'AV3povgGsPG7P9PiVL2DT97_kMiBc5CxGCxCr36SjQX-DUsqZC-rGcmey0a7W88BHfZHvpNemVgZxAws',
+            production: 'xxxxxxxxx'
+        },
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '1.00', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(payment) {
+                    window.alert('Payment Complete!');
+            });
+        }
+
+    }, '#paypal-button');
+</script>
+
+<br>
+
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %> | 
 <%= link_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %><br>
 <br>
-
-
-<%= link_to "Complete Your Order", new_order_path(@product), class: "btn btn-primary", data: {no_turbolink: true } %>

@@ -30,8 +30,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-   #just changed @product.user_id = current_user.id
-     @product.user = current_user
+   #just add this, not sure what tutorial from
+    @product.user = current_user
     
     respond_to do |format|
       if @product.save
@@ -67,6 +67,8 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -76,7 +78,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :price, :color, :size, :description, :image_url)
+      params.require(:product).permit(:title, :price, :color, :size, :description, :image_url, :category_id)
     end
     
    

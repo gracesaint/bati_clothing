@@ -6,22 +6,13 @@
   <strong><%= @product.title.upcase %></strong>
 </h2>
 
-
-
-
-  <div class="dropdown">
-    <p>
+<p>
   <%= image_tag @product.image_url %>
-    </p>
-    <div class="dropdown-content">
-      <%= image_tag @product.image_url, :size => '800x800' %>
-    </div>
-</div>
+</p>
 
 <br>
 
 <%= button_to "Add to Cart", order_items_path(@product_id), class: "btn btn-primary" %>
-
 
 </div>
 

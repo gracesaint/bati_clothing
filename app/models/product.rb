@@ -10,8 +10,10 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :reviews
   
-  #just added from merchant rails tutorial -- not on base rails
   has_many :order_items
+  
+  belongs_to :category
+  validates :category, presence: true
   
     
 end

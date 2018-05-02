@@ -8,8 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem "figaro"
+gem 'paypal-sdk-rest'
 gem 'jquery-rails'
 gem 'sunspot_rails'
 gem 'sunspot_solr'

@@ -33,20 +33,6 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
 
-    Stripe.api_key = ENV["STRIPE_API_KEY"]
-    token = params[:stripeToken]
-    
-    begin
-      charge = Stripe::Charge.create(
-        :amount => (@order.total * 100).floor,
-        :currency => "usd",
-        :card => token
-        )
-      flash[:notice] = "Thanks for ordering!"
-    rescue Stripe::CardError => e
-      flash[:danger] = e.message
-    end
-
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
