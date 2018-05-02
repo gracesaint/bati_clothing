@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1>View your Order below</h1>
+<h4>Click the 'Show' link to view your shopping cart</h4>
 
-<table>
+<table id= "products" style="margin-left: 30px; border-collapse: collapse;" border="0"; cellspacing="0";>
   <thead>
     <tr>
       <th>User</th>
@@ -11,14 +12,17 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody style="border-left: 0px none; border-right: 0px none;">
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.user_id %></td>
+        <td><%= current_user.name %></td>
         <td><%= order.status %></td>
         <td><%= link_to 'Show', order %></td>
+        
+        <% if current_user.admin? %>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +30,7 @@
 
 <br>
 
+
+<% if current_user.admin? %>
 <%= link_to 'New Order', new_order_path %>
+<% end %>

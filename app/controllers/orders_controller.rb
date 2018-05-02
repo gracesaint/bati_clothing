@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  
+#  def purchases
+#    @orders = Order.all.where(buyer: current_user).order("created_at DESC")
+#  end
+  
 
   # GET /orders
   # GET /orders.json
@@ -12,6 +17,7 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     @orders = Order.find(params[:id])
+   # @order = Order.find_by(id: session[:order_id], buyer_id: current_user.id)
   end
   
   

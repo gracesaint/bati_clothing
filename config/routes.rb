@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :orders
   resources :order_items
   get 'search/index'
+  
+#  get 'purchases' => 'orders#purchases'
 
   get 'search/results'
   resources :search
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   end
   
   devise_for :users
+  
+  
   get 'main/home'
   
   get 'orders/main/home', to: 'main#home'

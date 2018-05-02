@@ -1,0 +1,38 @@
+<div class="center">
+  <h2>Your Purchase History</h2>
+</div>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Image</th>
+    <th class="center">Item</th>
+    <th class="center">Price</th>
+    <th class="center">Date Purchased</th>
+  </tr>
+
+  <% @orders.each do |order| %>
+  <% if order.status == "submitted" %>
+  
+    <tr>
+      <td class="center">
+         <%= order.order_items.each do |i|%>
+        <%=i.quantity.to_i %> 
+        <%=i.product.name %>
+        <% end %>
+        </td>
+          
+          
+          <!--  image_tag order.product.image.url(:thumb) %></td -->
+      <td class="center"><%= order.product.name %></td>
+      <td class="center"><%= number_to_currency(order.product.price) %></td>
+      <td class="center"><%= order.created_at.strftime("%B %-d, %Y") %></td>
+    <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Product', new_product_path, class: "btn btn-link" %>
+<% end %>

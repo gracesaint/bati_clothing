@@ -66,7 +66,7 @@ class OrderItemsController < ApplicationController
 
   private
   
-  #from merchant tutorial
+  
 #  def load_order
 #  begin
 #    @order = Order.find(session[:order_id])
@@ -76,7 +76,7 @@ class OrderItemsController < ApplicationController
 #  end
 #  end
   
-  #second merchant tutorial method
+  
   def load_order
   @order = Order.find_or_initialize_by(id: session[:order_id], status: "unsubmitted")
   if @order.new_record?

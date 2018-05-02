@@ -3,7 +3,7 @@
 <table>
   <tr>
   <th><strong>Customer:</strong></th>
-  <td><%= @order.user_id %></td>
+  <td><%= current_user.name %></td>
 </tr>
 
 <tr>
@@ -62,6 +62,22 @@
   
 <h4>Order Total:</h4>
  <%= print_price @order.total %>
+ 
+
+<h4>Promo Code? </h4> 
+<form name="myform" id="myform" action="action.php">
+    <input type="text" name="promo" class="form-control"><br>
+</form>
+
+<!-- script>
+    var myform = document.getElementById('myform');
+      myform.onsubmit = function(){ 
+                    document.getElementById('myInput').value = < @order.total %> -* 'myInput';
+                    myform.submit();
+    };
+</script -->
+
+ 
 <hr>
 
 

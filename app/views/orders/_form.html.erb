@@ -1,18 +1,20 @@
 <div class="row">
   
-  <div class="col-md-6">
+  <div class="col-md-4">
     <% @order.order_items.each do |item| %>
     <div class="thumbnail">
       <%= image_tag "products/#{item.product.image_url}" %>
     </div>
-    <h3><%= item.product.title %></h3>
-    <h3><%= item.product.price %></h3>
-    </div>
+    <h3><%=  item.product.title %></h3>
+    <h3><%= print_price item.product.price %></h3>
+    
+    
   <% end %>
-  <%= @order.total
+  <h3>Order Total: <%= @order.total %></h3>
+  </div>
   
   
-<div class="col-md-10">
+<div class="col-md-8">
 
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
